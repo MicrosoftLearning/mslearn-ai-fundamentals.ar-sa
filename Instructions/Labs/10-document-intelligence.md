@@ -36,7 +36,7 @@ lab:
 أنت الآن جاهز لتحليل إيصال لشركة البيع بالتجزئة في Northwind Traders الوهمية.
 
 1. حدد [****https://aka.ms/mslearn-receipt](https://aka.ms/mslearn-receipt) لتنزيل نموذج مستند إلى الكمبيوتر. افتح المجلد. 
-1. حدد **Form Recognizer Studio** للعودة إلى **صفحة Get Started with Document Intelligence Studio** ، وضمن Receipts حدد **Try it out**.
+1. حدد **Document Intelligence Studio** للعودة إلى **صفحة Get Started with Document Intelligence Studio** ، وضمن Receipts حدد **Try it out**.
 1. في القائمة المنسدلة Prebuilt، تأكد من **تحديد الإيصالات** .
 1. حدد **استعراض بحثا عن الملفات** وانتقل إلى المجلد حيث حفظت الصورة. حدد صورة الإيصال ثم **فتح**. تظهر الصورة على الجانب الأيمن من الشاشة.
 
