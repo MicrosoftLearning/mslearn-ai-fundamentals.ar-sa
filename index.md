@@ -13,5 +13,5 @@ layout: home
 {٪ assign labs = site.pages | where_exp:"page", "page.url contains '/Instructions'" ٪}
 | التمارين |
 | ------- | 
-{% for activity in labs  %}| [{{ activity.lab.title }}]({{ site.github.url }}{{ activity.url }}) |
+{% للأنشطة في المعامل %}| [{{activity.lab.title}}]({{ site.github.url }}{{ activity.url }}) |
 {% endfor %}
