@@ -16,6 +16,6 @@
 | الذكاء الاصطناعي-900 Computer Vision | تحليل الصور في Vision Studio | [تعليمات التمرين المعملي](https://go.microsoft.com/fwlink/?linkid=2250145) |
 | الذكاء الاصطناعي-900 معالجة اللغة الطبيعية | تحليل النص باستخدام Language Studio | [تعليمات التمرين المعملي](https://go.microsoft.com/fwlink/?linkid=2250314) |
 | الذكاء الاصطناعي-900 Document Intelligence | استخراج بيانات النموذج في Document Intelligence Studio | [تعليمات التمرين المعملي](https://go.microsoft.com/fwlink/?linkid=2250315) |
-| الذكاء الاصطناعي إنشاء الذكاء الاصطناعي-900 | استكشاف الذكاء الاصطناعي التوليدية باستخدام Bing Copilot | [تعليمات التمرين المعملي](https://go.microsoft.com/fwlink/?linkid=2249955) |
+| الذكاء الاصطناعي إنشاء الذكاء الاصطناعي-900 | استكشاف Microsoft Copilot في Microsoft Edge | [تعليمات التمرين المعملي](https://go.microsoft.com/fwlink/?linkid=2249955) |
 
 
