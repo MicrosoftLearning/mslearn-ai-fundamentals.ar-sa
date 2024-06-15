@@ -1,4 +1,4 @@
-# اختيار مختبر الذكاء الاصطناعي-900 مدرب
+# اختيار مختبر تدريب AI-900
 
 هذه الدورة التدريبية، AI-900: أساسيات الذكاء الاصطناعي، لديها مجموعة فرعية من الأنشطة المعملية المخصصة للتدريب بقيادة مدرب وتم تكييفها لتلائم دورة تدريبية مدتها يوم واحد.
 
@@ -6,16 +6,16 @@
 
 > ملاحظة: قد يختار المدرسون إضافة أنشطة معملية إضافية من المجموعة الكاملة للأنشطة المعملية AI-900 إلى وحداتهم النمطية عند التدريس.
 
-## مجموعة الذكاء الاصطناعي-900 من المختبرات ل ILT
+## مجموعة AI-900 من المختبرات لـ ILT
 
 يتم تعيين المجموعة الفرعية من مختبرات AI-900 المستخدمة في هذه الدورة التدريبية لكل وحدة على النحو التالي: 
 
 | معمل متدرب AI-900 # | الموضوع | الإرشادات |
 | --- | --- | --- |
-| نظرة عامة على الذكاء الاصطناعي الذكاء الاصطناعي-900 | استكشاف Azure الذكاء الاصطناعي Services | [تعليمات التمرين المعملي](https://go.microsoft.com/fwlink/?linkid=2250253) |
-| الذكاء الاصطناعي-900 Computer Vision | تحليل الصور في Vision Studio | [تعليمات التمرين المعملي](https://go.microsoft.com/fwlink/?linkid=2250145) |
-| الذكاء الاصطناعي-900 معالجة اللغة الطبيعية | تحليل النص باستخدام Language Studio | [تعليمات التمرين المعملي](https://go.microsoft.com/fwlink/?linkid=2250314) |
-| الذكاء الاصطناعي-900 Document Intelligence | استخراج بيانات النموذج في Document Intelligence Studio | [تعليمات التمرين المعملي](https://go.microsoft.com/fwlink/?linkid=2250315) |
-| الذكاء الاصطناعي إنشاء الذكاء الاصطناعي-900 | استكشاف Microsoft Copilot في Microsoft Edge | [تعليمات التمرين المعملي](https://go.microsoft.com/fwlink/?linkid=2249955) |
+| نظرة عامة على الذكاء الاصطناعي على AI-900 | استكشاف خدمات Azure AI | [إرشادات المختبر](https://go.microsoft.com/fwlink/?linkid=2250253) |
+| خدمة AI-900 Computer Vision | تحليل الصور في Vision Studio | [إرشادات المعمل](https://go.microsoft.com/fwlink/?linkid=2250145) |
+| معالجة اللغة الطبيعية AI-900 | تحليل النص باستخدام Language Studio | [إرشادات المعمل](https://go.microsoft.com/fwlink/?linkid=2250314) |
+| خدمة AI-900 Document Intelligence | استخراج بيانات النموذج في Document Intelligence Studio | [إرشادات المعمل](https://go.microsoft.com/fwlink/?linkid=2250315) |
+| خدمة الذكاء الاصطناعي AI-900 Generative AI | استكشاف Microsoft Copilot في Microsoft Edge | [إرشادات المعمل](https://go.microsoft.com/fwlink/?linkid=2249955) |
 
 
