@@ -124,7 +124,7 @@ lab:
 
 1. حدد **Next: Add cognitive skills (Optional)**.
 
-1. في قسم **إرفاق الخدمات المعرفية** حدد مورد خدمات الذكاء الاصطناعي في Azure.  
+1. في مقطع **إرفاق خدمات الذكاء الاصطناعي** حدد مورد خدمات الذكاء الاصطناعي في Azure لديك.  
 
 1. في القسم **إضافة إثراءات**:
     - غيّر **اسم مجموعة المهارات** إلى **مجموعة مهارات القهوة**.
@@ -152,11 +152,12 @@ lab:
     - تفاصيل الصور
     - مراجع الصور
 
-    > **ملاحظة** يظهر تحذير يطلب **Storage Account Connection String**.
+    > **ملاحظة** يظهر تحذير يطلب **سلسلة اتصال حساب Storage**.
     >
     > ![لقطة شاشة تعرض تحذير شاشة اتصال حساب Storage مع تحديد "Choose an existing connection".](media/create-cognitive-search-solution/6a-azure-cognitive-search-enrichments-warning.png)
     >
-    > 1. حدد رابط **Choose an existing connection**. اختر حساب التخزين الذي أنشأته سابقًا.
+
+1. حدد رابط **Choose an existing connection**. اختر حساب التخزين الذي أنشأته سابقًا.
     > 1. انقر فوق **+ حاوية** لإنشاء حاوية جديدة تسمى **مخزن المعرفة** مع مستوى خصوصية المُعين إلى **خاص**، وحدد **إنشاء**.
     > 1. ثم حدد حاوية **knowledge-store** ثم انقر فوق **Select** أسفل الشاشة.
 
@@ -166,7 +167,7 @@ lab:
 
 1. تأكد من أن **Key** مضبوط على **metadata_storage_path**. اترك **Suggester name** فارغا و **Search mode** ممتلئا تلقائيا.
 
-1. راجع الإعدادات الافتراضية لحقول الفهرس. حدد **filterable** لجميع الحقول التي تم تحديدها مسبقاً بشكل افتراضي.
+1. راجع الإعدادات الافتراضية لحقول الفهرس. حدد **filterable** لجميع الحقول التي تم تحديدها مسبقاً بشكل افتراضي. تتضمن أسماء الحقول التي يجب وضع علامة *قابل للتصفية* عليها: المحتوى والمواقع والعبارات الأساسية والتوجه وmerged_content والنصوص وlayoutText وimageTags وimageCaption.
 
     ![لقطة شاشة تعرض جزء الفهرس المخصص مع إدخال اسم الفهرس واختيار "Filterable" لحقل فهرس افتراضي.](media/create-cognitive-search-solution/6a-azure-cognitive-search-customize-index.png)
 
@@ -238,11 +239,11 @@ lab:
 
 1. في مدخل Azure، انتقل مرةً أخرى إلى حساب Azure Storage خاصتك.
 
-2. في جزء القائمة الأيمن، حدد **Containers**. حدد حاوية **knowledge-store**.
+2. في جزء القائمة الأيمن، حدد **Containers**. حدد حاوية **knowledge-store**. 
 
     ![لقطة شاشة لحاوية مخزن المعرفة.](media/create-cognitive-search-solution/knowledge-store-blob-0.png)
 
-3. حدد أي عنصر، ثم انقر فوق ملف **objectprojection.json**.
+3. سترى قائمة مجلدات. يوجد مجلد واحد لكل بيانات تعريف لكل مستند مراجعة. **حدد أياً من المجلدات**. داخل المجلد، انقر فوق ملف **objectprojection.json**.
 
     ![لقطة شاشة من objectproject.json.](media/create-cognitive-search-solution/knowledge-store-blob-1.png)
 
