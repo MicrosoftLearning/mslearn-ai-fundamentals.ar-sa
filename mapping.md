@@ -13,9 +13,9 @@
 | معمل متدرب AI-900 # | الموضوع | الإرشادات |
 | --- | --- | --- |
 | نظرة عامة على الذكاء الاصطناعي على AI-900 | استكشاف خدمات Azure AI | [إرشادات المختبر](https://go.microsoft.com/fwlink/?linkid=2250253) |
-| خدمة AI-900 Computer Vision | تحليل الصور في Vision Studio | [إرشادات المعمل](https://go.microsoft.com/fwlink/?linkid=2250145) |
-| معالجة اللغة الطبيعية AI-900 | تحليل النص باستخدام Language Studio | [إرشادات المعمل](https://go.microsoft.com/fwlink/?linkid=2250314) |
-| خدمة AI-900 Document Intelligence | استخراج بيانات النموذج في Document Intelligence Studio | [إرشادات المعمل](https://go.microsoft.com/fwlink/?linkid=2250315) |
-| خدمة الذكاء الاصطناعي AI-900 Generative AI | استكشاف Microsoft Copilot في Microsoft Edge | [إرشادات المعمل](https://go.microsoft.com/fwlink/?linkid=2249955) |
+| خدمة AI-900 Computer Vision | تحليل الصور في Azure AI Foundry | [إرشادات المعمل](https://go.microsoft.com/fwlink/?linkid=2250145) |
+| معالجة اللغة الطبيعية AI-900 | تحليل النص باستخدام Azure AI Foundry | [إرشادات المعمل](https://go.microsoft.com/fwlink/?linkid=2250314) |
+| خدمة AI-900 Document Intelligence | استخراج بيانات النماذج في Azure AI Foundry | [إرشادات المعمل](https://go.microsoft.com/fwlink/?linkid=2250315) |
+| خدمة الذكاء الاصطناعي AI-900 Generative AI | استكشاف الذكاء الاصطناعي التوليدي في Azure AI Foundry | [إرشادات المعمل](https://go.microsoft.com/fwlink/?linkid=2249955) |
 
 
