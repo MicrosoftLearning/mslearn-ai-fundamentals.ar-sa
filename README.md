@@ -1,11 +1,3 @@
-#README
-
-We've turned off the ability to report issues directly on this repo and do not monitor PRs.
-
-Provide feedback here: https://aka.ms/provide-feedback
-
-Or, if you are a trainer with a microsoft.com email address, please create a ticket in AzDO.
-
 # تمارين أساسيات الذكاء الاصطناعي Microsoft Azure
 
 يحتوي هذا المستودع على تعليمات وأصول للتدريبات العملية في البرنامج التعليمي الرسمي من Microsoft لدعم [معتمد من Microsoft: شهادة أساسيات](https://learn.microsoft.com/credentials/certifications/azure-ai-fundamentals/) الذكاء الاصطناعي في Azure صُممِّت التمارين لتكملة وحدات التدريب المرتبطة بـ [Microsoft Learn](https://learn.microsoft.com/training)، وتتكون <u>مجموعة فرعية</u> من هذه التمارين من المختبرات العملية في [AI-900: الرسمي: دورة تدريبية بقيادة مدرب في ](https://learn.microsoft.com/en-us/training/courses/ai-900t00)أساسيات الذكاء الاصطناعي في Microsoft Azure.
