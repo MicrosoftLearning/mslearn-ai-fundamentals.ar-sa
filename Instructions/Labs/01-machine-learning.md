@@ -1,199 +1,306 @@
----
-lab:
-  title: استكشاف التعلُّم الآلي التلقائي ي Azure Machine Learning
----
+<div class="Box-sc-g0xbh4-0 eoaCFS js-snippet-clipboard-copy-unpositioned undefined" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><markdown-accessiblity-table data-catalyst=""><table>
+  <thead>
+  <tr>
+  <th>lab</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><div dir="rtl"><table>
+  <thead>
+  <tr>
+  <th>title</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><div dir="rtl">استكشاف التعلُّم الآلي التلقائي ي Azure Machine Learning</div></td>
+  </tr>
+  </tbody>
+</table>
+</div></td>
+  </tr>
+  </tbody>
+</table></markdown-accessiblity-table>
 
-# استكشاف التعلُّم الآلي التلقائي ي Azure Machine Learning
-
-في هذا التمرين، ستستخدم ميزة التعلّم الآلي التلقائي في التعلّم الآلي في Azure لتدريب نموذج التعلم الآلي وتقييمه. ثم ستقوم بنشر النموذج المُدرّب واختباره.
-
-يجب أن يستغرق هذا التمرين حوالي **35** دقيقة لإكماله.
-
-## إنشاء مساحة عمل "التعلم الآلي من Azure"
-
-لاستخدام التعلّم الآلي في Azure، تحتاج إلى توفير مساحة عمل تعلّم آلي في Azure في اشتراك Azure الخاص بك. ثم ستتمكن من استخدام استوديو التعلّم الآلي في Azure للعمل مع الموارد في مساحة العمل الخاصة بك.
-
-> **تلميح**: إذا كان لديك بالفعل مساحة عمل التعلّم الآلي في Azure، يمكنك استخدام ذلك والتخطي إلى المهمة التالية.
-
-1. سجل الدخول إلى [مدخل Azure](https://portal.azure.com) في `https://portal.azure.com` باستخدام بيانات اعتماد Microsoft الخاصة بك.
-
-1. حدد **＋إنشاء مورد**، وابحث عن *التعلّم الآلي*، وقم بإنشاء مورد **تعلّم آلي** جديد بالإعدادات التالية:
-    - **الاشتراك**: *اشتراك Azure الخاص بك*.
-    - **Resource group**: *أنشئ مجموعة موارد أو حددها*.
-    - **الاسم**: *أدخل اسم فريد لمساحة العمل الخاصة بك*.
-    - **المنطقة**: شرق الولايات المتحدة
-    - **Storage account**: *لاحظ حساب التخزين الجديد الافتراضي الذي سيتم إنشاؤه لمساحة العمل الخاصة بك*.
-    - **Key vault**: *لاحظ الحاوية الرئيسية الجديدة الافتراضية التي سيتم إنشاؤها لمساحة العمل الخاصة بك*.
-    - **Application insights**: *لاحظ مورد application insights الجديد الافتراضي الذي سيتم إنشاؤه لمساحة العمل الخاصة بك*.
-    - **Container registry**: None (*سيتم إنشاء سجل واحد تلقائيًا عند أول مرة تقوم فيها بتوزيع نموذج في حاوية*).
-
-1. حدد **Review + create**، ثم حدد **Create**. انتظر حتى يتم إنشاء مساحة العمل الخاصة بك (قد يستغرق الأمر بضع دقائق)، ثم انتقل إلى المورد الموزع.
-
-#### تشغيل الاستوديو 
-
-1. في مورد مساحة عمل تعلم الآلة في Azure، حدد **تشغيل الاستوديو** (أو افتح علامة تبويب جديدة للمتصفح وانتقل إلى [https://ml.azure.com](https://ml.azure.com?azure-portal=true)، وسجّل الدخول إلى استوديو Azure Machine Learning باستخدام حساب Microsoft الخاص بك). أغلق أي رسائل يتم عرضها.
-
-1. في Azure Machine Learning studio، يجب أن تشاهد مساحة العمل التي تم إنشاؤها حديثًا. إذا لم يكن الأمر كذلك، فحدد **جميع مساحات العمل** في القائمة اليسرى ثم حدد مساحة العمل التي أنشأتها للتو.
-
-##  استخدم التعلّم الآلي التلقائي لتدريب نماذج
-
-يتيح لك التعلّم الآلي التلقائي تجربة خوارزميات ومعلمات متعددة لتدريب نماذج متعددة، وتحديد أفضل نموذج لبياناتك. في هذا التمرين، ستستخدم مجموعة بيانات من التفاصيل القديمة لتأجير الدراجات لتدريب نموذج يتنبأ بعدد مرات تأجير الدراجات التي ينبغي توقعها في يوم معين، بناءً على الميزات الموسمية والأرصاد الجوية.
-
-> **الاقتباس**: *البيانات المستخدمة في هذا التمرين مُشتقة من [Capital Bikeshare](https://www.capitalbikeshare.com/system-data) وتستخدم وفقًا لـ[اتفاقية ترخيص](https://www.capitalbikeshare.com/data-license-agreement)البيانات المنشورة*.
-
-1. في [استوديو التعلم الآلي في Azure](https://ml.azure.com?azure-portal=true)، اعرض صفحة **التعلّم الآلي التلقائي** (ضمن **التأليف**).
-
-1. إنشاء مهمة تعلّم آلي تلقائية جديدة باستخدام الإعدادات التالية، باستخدام **التالي** كما هو مطلوب للتقدم من خلال واجهة المستخدم:
-
-    **الإعدادات الأساسية**:
-
-    - **اسم الوظيفة**: يجب أن يكون حقل اسم الوظيفة مملوءًا مسبقًا باسم فريد. احتفظ به كما هو.
-    - **اسم التجربة الجديدة**: `mslearn-bike-rental`
-    - **الوصف**: تعلّم آلي تلقائي للتنبؤ باستئجار الدراجات
-    - **العلامات**: *بدون*
-
-   **نوع المهمة والبيانات**:
-
-    - **تحديد نوع المهمة**: تراجع
-    - **حدد مجموعة البيانات**: إنشاء مجموعة بيانات جديدة بالإعدادات التالية:
-        - **Data type**:
-            - **الاسم:** `bike-rentals`
-            - **الوصف**: `Historic bike rental data`
-            - **Type**: جدول (mltable)
-        - **مصدر البيانات**:
-            - حدد **من ملفات محلية**
-        - **نوع تخزين الوجهة**:
-            - **نوع مخزن البيانات**: Azure Blob Storage
-            - **الاسم**: workspaceblobstore
-        - **تحديد MLtable**:
-            - **قم بتحميل المجلد**: *قم بتنزيل المجلد المتضمن الملفين اللذين تحتاج إلى تحميلهما وفك ضغطه* `https://aka.ms/bike-rentals`
-
-        حدد **إنشاء**. بعد إنشاء مجموعة البيانات، حدد مجموعة بيانات **تأجير الدراجات** لمواصلة إرسال مهمة التعلُّم الآلي التلقائي.
-
-    **إعدادات المهمة**:
-
-    - **نوع المهمة**: تراجع
-    - **مجموعة البيانات**: bike-rentals
-    - **العمود الهدف**: التأجيرات (عدد صحيح)
-    - **إعدادات التكوين الإضافية**:
-        - **القياس الرئيسي**: NormalizedRootMeanSquaredError
-        - **شرح أفضل نموذج**: *غير محدد*
-        - **تمكين تكديس المجموعات**: *تم إلغاء التحديد*
-        - **استخدام جميع النماذج المدعومة**: <u>غير</u> محدد. *ستقيد الوظيفة لتجربة عدد قليل من الخوارزميات المحددة فقط.*
-        - **Allowed models**: *حدد فقط **RandomForest** و**LightGBM** — عادة ما ترغب في تجربة أكبر عدد ممكن، ولكن كل نموذج مضاف يزيد من الوقت الذي يستغرقه تشغيل الوظيفة.*
-    - **** الحدود: *توسيع هذا القسم*
-        - **الحد الأقصى للمحاولات**: `3`
-        - **الحد الأقصى للمحاولات المتوازية**: `3`
-        - **الحد الأقصى للعُقد**: `3`
-        - **حد درجة القياس**: `0.085` (*بحيث تنتهي المهمة إذا وصل النموذج إلى درجة القياس التي تمت تسويتها لجذر متوسط الخطأ التربيعي التي تبلغ 0,085 أو أقل.*)
-        - **مهلة التجربة**: `15`
-        - **انتهاء مهلة التكرار**: `15`
-        - **تمكين الإنهاء المبكر**: *محدد*
-    - **    التحقق من الصحة والاختبار**:
-        - **نوع التحقق من الصحة**: تقسيم التحقق من صحة التدريب
-        - **النسبة المئوية للبيانات** التحقق من الصحة: 10
-        - **مجموعة بيانات الاختبار**: بدون
-
-    **الحساب**:
-
-    - **حدد نوع الحساب**: بلا خادم
-    - **Virtual machine type**: معالج
-    - **Virtual machine tier**: Dedicated
-    - **Virtual machine size**: Standard_DS3_V2\*
-    - **عدد المثيلات**: 1
-
-    \* *إذا كان اشتراكك يقيد أحجام الأجهزة الافتراضية المتوفِّرة لك، فاختر أي حجم متوفِّر.*
-
-1. تقديم وظيفة التدريب. تبدأ تلقائيًا.
-
-1. انتظر حتى تنتهي المهمة. قد يستغرق بعض الوقت - الآن قد يكون الوقت المناسب لفترة استراحة لتناول القهوة!
-
-## مراجعة أفضل نموذج
-
-عند اكتمال مهمة التعلّم الآلي التلقائي، يمكنك مراجعة أفضل نموذج تم تدريبه.
-
-1. في علامة التبويب **Overview** شغّل التعلم الآلي التلقائي، لاحظ أفضل ملخص نموذج.
-    ![لقطة شاشة لأفضل ملخص نموذج لوظيفة التعلم الآلي التلقائية مع مربع حول algorithm name.](./media/use-automated-machine-learning/complete-run.png)
-  
-1. حدد النص الموجود أسفل **اسم الخوارزمية** لأفضل نموذج لعرض تفاصيله.
-
-1. حدد علامة التبويب ⁧**المقاييس⁧**⁩ وحدد ⁧**⁩القيم المتبقية⁧**⁩ ومخططات ⁧**⁩predicted_true⁧**⁩ إذا لم تكن محددة بالفعل.
-
-    راجع المخططات البيانية التي توضح أداء النموذج. يظهر مخطط**القيم المتبقية** *القيم المتبقية* (الاختلافات بين القيم المتوقعة والقيم الفعلية) كمدرج تكراري. يقارن مخطط **predicted_true** القيم المتوقعة بالقيم الحقيقية.
-
-## نشر النموذج واختباره
-
-1. على علامة تبويب **النموذج** لأفضل نموذج مدرب من قبل مهمة التعلم الآلي التلقائية خاصتك، حدد **توزيع** واستخدم خيار **نقطة النهاية في الوقت الحقيقي** لتوزيع النموذج مع الإعدادات التالية:
-    - **جهاز ظاهري**: Standard_DS3_v2
-    - **عدد المثيلات**: 3
-    - **نقطة النهاية**: جديد
-    - **اسم نقطة النهاية**: *احتفظ بالاسم الافتراضي أو تأكد من أنه فريد بشكل عمومي*
-    - **اسم التوزيع**: *اترك الإعداد الافتراضي*
-    - **استنتاج تجميع البيانات**: *معطّل*
-    - **نموذج الحزمة**: *معطّل*
-
-    > **ملاحظة** إذا تلقيت رسالة تفيد بعدم وجود حصة كافية لتحديد الجهاز الظاهري *Standard_DS3_v2*، فيرجى تحديد جهاز آخر.
-
-1. انتظر حتى بدء التوزيع - قد يستغرق هذا بضع ثوانٍ. سيتم الإشارة إلى **حالة النشر** لنقطة نهاية**predict-rentals** في الجزء الرئيسي من الصفحة *قيد التشغيل*.
-1. انتظر حتى تتغير **حالة النشر** إلى *نجح*. قد يستغرق هذا ما يصل إلى 5-10 دقائق.
-
-## اختبار الخدمة المنشورة
-
-يمكنك الآن اختبار الخدمة التي تم توزيعها.
-
-1. في استوديو Azure Machine Learning، في القائمة اليسرى، حدد **نقاط النهاية** وافتح نقطة النهاية في الوقت الفعلي **predict-rentals** 
-
-1. في عرض صفحة نقطة نهاية **predict-rentals**، اعرض علامة تبويب **الاختبار**.
-
-1. في جزء **بيانات الإدخال لاختبار نقطة النهاية**، استبدل قالب JSON ببيانات الإدخال التالية:
-
-    ```json
-      {
-     "input_data": {
-       "columns": [
-         "day",
-         "mnth",
-         "year",
-         "season",
-         "holiday",
-         "weekday",
-         "workingday",
-         "weathersit",
-         "temp",
-         "atemp",
-         "hum",
-         "windspeed"
-       ],
-       "index": [0],
-       "data": [[1,1,2022,2,0,1,1,2,0.3,0.3,0.3,0.3]]
-     }
-    }
-
-    ```
-
-1. انقر فوق الزر **الاختبار**.
-
-1. راجع نتائج الاختبار، التي تتضمن عددًا متوقعًا من مرات الإيجار استنادً إلى ميزات الإدخال - مثل:
-
-    ```JSON
-    [
-      352.3564674945718
-    ]
-    ```
-
-    أخذ جزء الاختبار بيانات الإدخال واستخدم النموذج الذي دربته لإرجاع العدد المتوقع من الإيجارات.
-
-دعونا نستعرض ما فعلته. لقد استخدمت مجموعة بيانات من بيانات تأجير الدراجات التاريخية لتدريب نموذج. يتوقع النموذج عدد مرات تأجير الدراجات المتوقع في يوم معين، استناداً إلى *الميزات*الموسمية والأرصاد الجوية.
-
-## التنظيف
-
-تتم استضافة خدمة الويب التي قمت بإنشائها في *Azure Container Instance*. إذا كنت لا تنوي إجراء المزيد من التجارب عليها، فإنه يجب عليك حذف نقطة النهاية لتجنب تراكم استخدام Azure غير الضروري.
-
-1. في [آلة ستوديو Azure Machine Learning](https://ml.azure.com?azure-portal=true)، في علامة التبويب **نقاط النهاية**، حدد نقطة النهاية **predict-rentals**. ثم حدد **Delete**، وقم بالتأكيد على رغبتك في حذف نقطة النهاية.
-
-    يضمن حذف الحساب عدم تحصيل رسوم من اشتراكك مقابل موارد الحساب. ومع ذلك، سيتم تحصيل مبلغ صغير لتخزين البيانات طالما أن مساحة عمل التعلم الآلي من Azure موجودة في اشتراكك. إذا انتهيت من استكشاف التعلم الآلي من Azure، فإنه يمكنك حذف مساحة عمل التعلم الآلي من Azure والموارد المقترنة بها.
-
-لحذف مساحة العمل لديك:
-
-1. في [مدخل Azure](https://portal.azure.com?azure-portal=true)، ومن صفحة **Resource groups**، افتح مجموعة الموارد التي حددتها عند إنشاء مساحة عمل Azure Machine Learning.
-2. انقر فوق **حذف مجموعة الموارد**، واكتب اسم مجموعة الموارد لتأكيد أنك ترغب في حذفها، ثم حدد **Delete**.
+<div class="markdown-heading" dir="rtl"><h1 tabindex="-1" class="heading-element" dir="rtl">استكشاف التعلُّم الآلي التلقائي ي Azure Machine Learning</h1><a id="user-content-استكشاف-التعلُّم-الآلي-التلقائي-ي-azure-machine-learning" class="anchor" aria-label="Permalink: استكشاف التعلُّم الآلي التلقائي ي Azure Machine Learning" href="#استكشاف-التعلُّم-الآلي-التلقائي-ي-azure-machine-learning"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="rtl">في هذا التمرين، ستستخدم ميزة التعلّم الآلي التلقائي في التعلّم الآلي في Azure لتدريب نموذج التعلم الآلي وتقييمه. ثم ستقوم بنشر النموذج المُدرّب واختباره.</p>
+<p dir="rtl">يجب أن يستغرق هذا التمرين حوالي <strong>35</strong> دقيقة لإكماله.</p>
+<div class="markdown-heading" dir="rtl"><h2 tabindex="-1" class="heading-element" dir="rtl">إنشاء مساحة عمل "التعلم الآلي من Azure"</h2><a id="user-content-إنشاء-مساحة-عمل-التعلم-الآلي-من-azure" class="anchor" aria-label="Permalink: إنشاء مساحة عمل &quot;التعلم الآلي من Azure&quot;" href="#إنشاء-مساحة-عمل-التعلم-الآلي-من-azure"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="rtl">لاستخدام التعلّم الآلي في Azure، تحتاج إلى توفير مساحة عمل تعلّم آلي في Azure في اشتراك Azure الخاص بك. ثم ستتمكن من استخدام استوديو التعلّم الآلي في Azure للعمل مع الموارد في مساحة العمل الخاصة بك.</p>
+<blockquote>
+<p dir="rtl"><strong>تلميح</strong>: إذا كان لديك بالفعل مساحة عمل التعلّم الآلي في Azure، يمكنك استخدام ذلك والتخطي إلى المهمة التالية.</p>
+</blockquote>
+<ol dir="rtl">
+<li>
+<p dir="rtl">سجل الدخول إلى <a href="https://portal.azure.com" rel="nofollow">مدخل Azure</a> في <code>https://portal.azure.com</code> باستخدام بيانات اعتماد Microsoft الخاصة بك.</p>
+</li>
+<li>
+<p dir="rtl">حدد <strong>＋إنشاء مورد</strong>، وابحث عن <em>التعلّم الآلي</em>، وقم بإنشاء مورد <strong>تعلّم آلي</strong> جديد بالإعدادات التالية:</p>
+<ul dir="rtl">
+<li><strong>الاشتراك</strong>: <em>اشتراك Azure الخاص بك</em>.</li>
+<li><strong>Resource group</strong>: <em>أنشئ مجموعة موارد أو حددها</em>.</li>
+<li><strong>الاسم</strong>: <em>أدخل اسم فريد لمساحة العمل الخاصة بك</em>.</li>
+<li><strong>المنطقة</strong>: شرق الولايات المتحدة</li>
+<li><strong>Storage account</strong>: <em>لاحظ حساب التخزين الجديد الافتراضي الذي سيتم إنشاؤه لمساحة العمل الخاصة بك</em>.</li>
+<li><strong>Key vault</strong>: <em>لاحظ الحاوية الرئيسية الجديدة الافتراضية التي سيتم إنشاؤها لمساحة العمل الخاصة بك</em>.</li>
+<li><strong>Application insights</strong>: <em>لاحظ مورد application insights الجديد الافتراضي الذي سيتم إنشاؤه لمساحة العمل الخاصة بك</em>.</li>
+<li><strong>Container registry</strong>: None (<em>سيتم إنشاء سجل واحد تلقائيًا عند أول مرة تقوم فيها بتوزيع نموذج في حاوية</em>).</li>
+</ul>
+</li>
+<li>
+<p dir="rtl">حدد <strong>Review + create</strong>، ثم حدد <strong>Create</strong>. انتظر حتى يتم إنشاء مساحة العمل الخاصة بك (قد يستغرق الأمر بضع دقائق)، ثم انتقل إلى المورد الموزع.</p>
+</li>
+</ol>
+<div class="markdown-heading" dir="rtl"><h4 tabindex="-1" class="heading-element" dir="rtl">تشغيل الاستوديو</h4><a id="user-content-تشغيل-الاستوديو" class="anchor" aria-label="Permalink: تشغيل الاستوديو" href="#تشغيل-الاستوديو"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ol dir="rtl">
+<li>
+<p dir="rtl">في مورد مساحة عمل تعلم الآلة في Azure، حدد <strong>تشغيل الاستوديو</strong> (أو افتح علامة تبويب جديدة للمتصفح وانتقل إلى <a href="https://ml.azure.com?azure-portal=true" rel="nofollow">https://ml.azure.com</a>، وسجّل الدخول إلى استوديو Azure Machine Learning باستخدام حساب Microsoft الخاص بك). أغلق أي رسائل يتم عرضها.</p>
+</li>
+<li>
+<p dir="rtl">في Azure Machine Learning studio، يجب أن تشاهد مساحة العمل التي تم إنشاؤها حديثًا. إذا لم يكن الأمر كذلك، فحدد <strong>جميع مساحات العمل</strong> في القائمة اليسرى ثم حدد مساحة العمل التي أنشأتها للتو.</p>
+</li>
+</ol>
+<div class="markdown-heading" dir="rtl"><h2 tabindex="-1" class="heading-element" dir="rtl">استخدم التعلّم الآلي التلقائي لتدريب نماذج</h2><a id="user-content-استخدم-التعلّم-الآلي-التلقائي-لتدريب-نماذج" class="anchor" aria-label="Permalink: استخدم التعلّم الآلي التلقائي لتدريب نماذج" href="#استخدم-التعلّم-الآلي-التلقائي-لتدريب-نماذج"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="rtl">يتيح لك التعلّم الآلي التلقائي تجربة خوارزميات ومعلمات متعددة لتدريب نماذج متعددة، وتحديد أفضل نموذج لبياناتك. في هذا التمرين، ستستخدم مجموعة بيانات من التفاصيل القديمة لتأجير الدراجات لتدريب نموذج يتنبأ بعدد مرات تأجير الدراجات التي ينبغي توقعها في يوم معين، بناءً على الميزات الموسمية والأرصاد الجوية.</p>
+<blockquote>
+<p dir="rtl"><strong>الاقتباس</strong>: <em>البيانات المستخدمة في هذا التمرين مُشتقة من <a href="https://www.capitalbikeshare.com/system-data" rel="nofollow">Capital Bikeshare</a> وتستخدم وفقًا لـ<a href="https://www.capitalbikeshare.com/data-license-agreement" rel="nofollow">اتفاقية ترخيص</a>البيانات المنشورة</em>.</p>
+</blockquote>
+<ol dir="rtl">
+<li>
+<p dir="rtl">في <a href="https://ml.azure.com?azure-portal=true" rel="nofollow">استوديو التعلم الآلي في Azure</a>، اعرض صفحة <strong>التعلّم الآلي التلقائي</strong> (ضمن <strong>التأليف</strong>).</p>
+</li>
+<li>
+<p dir="rtl">إنشاء مهمة تعلّم آلي تلقائية جديدة باستخدام الإعدادات التالية، باستخدام <strong>التالي</strong> كما هو مطلوب للتقدم من خلال واجهة المستخدم:</p>
+<p dir="rtl"><strong>الإعدادات الأساسية</strong>:</p>
+<ul dir="rtl">
+<li><strong>اسم الوظيفة</strong>: يجب أن يكون حقل اسم الوظيفة مملوءًا مسبقًا باسم فريد. احتفظ به كما هو.</li>
+<li><strong>اسم التجربة الجديدة</strong>: <code>mslearn-bike-rental</code></li>
+<li><strong>الوصف</strong>: تعلّم آلي تلقائي للتنبؤ باستئجار الدراجات</li>
+<li><strong>العلامات</strong>: <em>بدون</em></li>
+</ul>
+<p dir="rtl"><strong>نوع المهمة والبيانات</strong>:</p>
+<ul dir="rtl">
+<li>
+<p dir="rtl"><strong>تحديد نوع المهمة</strong>: تراجع</p>
+</li>
+<li>
+<p dir="rtl"><strong>حدد مجموعة البيانات</strong>: إنشاء مجموعة بيانات جديدة بالإعدادات التالية:</p>
+<ul dir="rtl">
+<li><strong>Data type</strong>:
+<ul dir="rtl">
+<li><strong>الاسم:</strong> <code>bike-rentals</code></li>
+<li><strong>الوصف</strong>: <code>Historic bike rental data</code></li>
+<li><strong>Type</strong>: جدول (mltable)</li>
+</ul>
+</li>
+<li><strong>مصدر البيانات</strong>:
+<ul dir="rtl">
+<li>حدد <strong>من ملفات محلية</strong></li>
+</ul>
+</li>
+<li><strong>نوع تخزين الوجهة</strong>:
+<ul dir="rtl">
+<li><strong>نوع مخزن البيانات</strong>: Azure Blob Storage</li>
+<li><strong>الاسم</strong>: workspaceblobstore</li>
+</ul>
+</li>
+<li><strong>تحديد MLtable</strong>:
+<ul dir="rtl">
+<li><strong>قم بتحميل المجلد</strong>: <em>قم بتنزيل المجلد المتضمن الملفين اللذين تحتاج إلى تحميلهما وفك ضغطه</em> <code>https://aka.ms/bike-rentals</code></li>
+</ul>
+</li>
+</ul>
+<p dir="rtl">حدد <strong>إنشاء</strong>. بعد إنشاء مجموعة البيانات، حدد مجموعة بيانات <strong>تأجير الدراجات</strong> لمواصلة إرسال مهمة التعلُّم الآلي التلقائي.</p>
+</li>
+</ul>
+<p dir="rtl"><strong>إعدادات المهمة</strong>:</p>
+<ul dir="rtl">
+<li><strong>نوع المهمة</strong>: تراجع</li>
+<li><strong>مجموعة البيانات</strong>: bike-rentals</li>
+<li><strong>العمود الهدف</strong>: التأجيرات (عدد صحيح)</li>
+<li><strong>إعدادات التكوين الإضافية</strong>:
+<ul dir="rtl">
+<li><strong>القياس الرئيسي</strong>: NormalizedRootMeanSquaredError</li>
+<li><strong>شرح أفضل نموذج</strong>: <em>غير محدد</em></li>
+<li><strong>تمكين تكديس المجموعات</strong>: <em>تم إلغاء التحديد</em></li>
+<li><strong>استخدام جميع النماذج المدعومة</strong>: غير محدد. <em>ستقيد الوظيفة لتجربة عدد قليل من الخوارزميات المحددة فقط.</em></li>
+<li><strong>Allowed models</strong>: <em>حدد فقط <strong>RandomForest</strong> و<strong>LightGBM</strong> — عادة ما ترغب في تجربة أكبر عدد ممكن، ولكن كل نموذج مضاف يزيد من الوقت الذي يستغرقه تشغيل الوظيفة.</em></li>
+</ul>
+</li>
+<li>**** الحدود: <em>توسيع هذا القسم</em>
+<ul dir="rtl">
+<li><strong>الحد الأقصى للمحاولات</strong>: <code>3</code></li>
+<li><strong>الحد الأقصى للمحاولات المتوازية</strong>: <code>3</code></li>
+<li><strong>الحد الأقصى للعُقد</strong>: <code>3</code></li>
+<li><strong>حد درجة القياس</strong>: <code>0.085</code> (<em>بحيث تنتهي المهمة إذا وصل النموذج إلى درجة القياس التي تمت تسويتها لجذر متوسط الخطأ التربيعي التي تبلغ 0,085 أو أقل.</em>)</li>
+<li><strong>مهلة التجربة</strong>: <code>15</code></li>
+<li><strong>انتهاء مهلة التكرار</strong>: <code>15</code></li>
+<li><strong>تمكين الإنهاء المبكر</strong>: <em>محدد</em></li>
+</ul>
+</li>
+<li>**    التحقق من الصحة والاختبار**:
+<ul dir="rtl">
+<li><strong>نوع التحقق من الصحة</strong>: تقسيم التحقق من صحة التدريب</li>
+<li><strong>النسبة المئوية للبيانات</strong> التحقق من الصحة: 10</li>
+<li><strong>مجموعة بيانات الاختبار</strong>: بدون</li>
+</ul>
+</li>
+</ul>
+<p dir="rtl"><strong>الحساب</strong>:</p>
+<ul dir="rtl">
+<li><strong>حدد نوع الحساب</strong>: بلا خادم</li>
+<li><strong>Virtual machine type</strong>: معالج</li>
+<li><strong>Virtual machine tier</strong>: Dedicated</li>
+<li><strong>Virtual machine size</strong>: Standard_DS3_V2*</li>
+<li><strong>عدد المثيلات</strong>: 1</li>
+</ul>
+<p dir="rtl">* <em>إذا كان اشتراكك يقيد أحجام الأجهزة الافتراضية المتوفِّرة لك، فاختر أي حجم متوفِّر.</em></p>
+</li>
+<li>
+<p dir="rtl">تقديم وظيفة التدريب. تبدأ تلقائيًا.</p>
+</li>
+<li>
+<p dir="rtl">انتظر حتى تنتهي المهمة. قد يستغرق بعض الوقت - الآن قد يكون الوقت المناسب لفترة استراحة لتناول القهوة!</p>
+</li>
+</ol>
+<div class="markdown-heading" dir="rtl"><h2 tabindex="-1" class="heading-element" dir="rtl">مراجعة أفضل نموذج</h2><a id="user-content-مراجعة-أفضل-نموذج" class="anchor" aria-label="Permalink: مراجعة أفضل نموذج" href="#مراجعة-أفضل-نموذج"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="rtl">عند اكتمال مهمة التعلّم الآلي التلقائي، يمكنك مراجعة أفضل نموذج تم تدريبه.</p>
+<ol dir="rtl">
+<li>
+<p dir="rtl">في علامة التبويب <strong>Overview</strong> شغّل التعلم الآلي التلقائي، لاحظ أفضل ملخص نموذج.
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/MicrosoftLearning/mslearn-ai-fundamentals.ar-sa/blob/main/Instructions/Labs/media/use-automated-machine-learning/complete-run.png"><img src="https://github.com/MicrosoftLearning/mslearn-ai-fundamentals.ar-sa/blob/main/Instructions/Labs/media/use-automated-machine-learning/complete-run.png" alt="لقطة شاشة لأفضل ملخص نموذج لوظيفة التعلم الآلي التلقائية مع مربع حول algorithm name." style="max-width: 100%;"></a></p>
+</li>
+<li>
+<p dir="rtl">حدد النص الموجود أسفل <strong>اسم الخوارزمية</strong> لأفضل نموذج لعرض تفاصيله.</p>
+</li>
+<li>
+<p dir="rtl">حدد علامة التبويب ⁧<strong>المقاييس⁧</strong>⁩ وحدد ⁧<strong>⁩القيم المتبقية⁧</strong>⁩ ومخططات ⁧<strong>⁩predicted_true⁧</strong>⁩ إذا لم تكن محددة بالفعل.</p>
+<p dir="rtl">راجع المخططات البيانية التي توضح أداء النموذج. يظهر مخطط<strong>القيم المتبقية</strong> <em>القيم المتبقية</em> (الاختلافات بين القيم المتوقعة والقيم الفعلية) كمدرج تكراري. يقارن مخطط <strong>predicted_true</strong> القيم المتوقعة بالقيم الحقيقية.</p>
+</li>
+</ol>
+<div class="markdown-heading" dir="rtl"><h2 tabindex="-1" class="heading-element" dir="rtl">نشر النموذج واختباره</h2><a id="user-content-نشر-النموذج-واختباره" class="anchor" aria-label="Permalink: نشر النموذج واختباره" href="#نشر-النموذج-واختباره"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ol dir="rtl">
+<li>
+<p dir="rtl">على علامة تبويب <strong>النموذج</strong> لأفضل نموذج مدرب من قبل مهمة التعلم الآلي التلقائية خاصتك، حدد <strong>توزيع</strong> واستخدم خيار <strong>نقطة النهاية في الوقت الحقيقي</strong> لتوزيع النموذج مع الإعدادات التالية:</p>
+<ul dir="rtl">
+<li><strong>جهاز ظاهري</strong>: Standard_DS3_v2</li>
+<li><strong>عدد المثيلات</strong>: 3</li>
+<li><strong>نقطة النهاية</strong>: جديد</li>
+<li><strong>اسم نقطة النهاية</strong>: <em>احتفظ بالاسم الافتراضي أو تأكد من أنه فريد بشكل عمومي</em></li>
+<li><strong>اسم التوزيع</strong>: <em>اترك الإعداد الافتراضي</em></li>
+<li><strong>استنتاج تجميع البيانات</strong>: <em>معطّل</em></li>
+<li><strong>نموذج الحزمة</strong>: <em>معطّل</em></li>
+</ul>
+<blockquote>
+<p dir="rtl"><strong>ملاحظة</strong> إذا تلقيت رسالة تفيد بعدم وجود حصة كافية لتحديد الجهاز الظاهري <em>Standard_DS3_v2</em>، فيرجى تحديد جهاز آخر.</p>
+</blockquote>
+</li>
+<li>
+<p dir="rtl">انتظر حتى بدء التوزيع - قد يستغرق هذا بضع ثوانٍ. سيتم الإشارة إلى <strong>حالة النشر</strong> لنقطة نهاية<strong>predict-rentals</strong> في الجزء الرئيسي من الصفحة <em>قيد التشغيل</em>.</p>
+</li>
+<li>
+<p dir="rtl">انتظر حتى تتغير <strong>حالة النشر</strong> إلى <em>نجح</em>. قد يستغرق هذا ما يصل إلى 5-10 دقائق.</p>
+</li>
+</ol>
+<div class="markdown-heading" dir="rtl"><h2 tabindex="-1" class="heading-element" dir="rtl">اختبار الخدمة المنشورة</h2><a id="user-content-اختبار-الخدمة-المنشورة" class="anchor" aria-label="Permalink: اختبار الخدمة المنشورة" href="#اختبار-الخدمة-المنشورة"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="rtl">يمكنك الآن اختبار الخدمة التي تم توزيعها.</p>
+<ol dir="rtl">
+<li>
+<p dir="rtl">في استوديو Azure Machine Learning، في القائمة اليسرى، حدد <strong>نقاط النهاية</strong> وافتح نقطة النهاية في الوقت الفعلي <strong>predict-rentals</strong></p>
+</li>
+<li>
+<p dir="rtl">في عرض صفحة نقطة نهاية <strong>predict-rentals</strong>، اعرض علامة تبويب <strong>الاختبار</strong>.</p>
+</li>
+<li>
+<p dir="rtl">في جزء <strong>بيانات الإدخال لاختبار نقطة النهاية</strong>، استبدل قالب JSON ببيانات الإدخال التالية:</p>
+</li>
+<div class="highlight highlight-source-json notranslate position-relative overflow-auto" dir="auto"><pre>  {
+ <span class="pl-ent">"input_data"</span>: {
+   <span class="pl-ent">"columns"</span>: [
+     <span class="pl-s"><span class="pl-pds">"</span>day<span class="pl-pds">"</span></span>,
+     <span class="pl-s"><span class="pl-pds">"</span>mnth<span class="pl-pds">"</span></span>,
+     <span class="pl-s"><span class="pl-pds">"</span>year<span class="pl-pds">"</span></span>,
+     <span class="pl-s"><span class="pl-pds">"</span>season<span class="pl-pds">"</span></span>,
+     <span class="pl-s"><span class="pl-pds">"</span>holiday<span class="pl-pds">"</span></span>,
+     <span class="pl-s"><span class="pl-pds">"</span>weekday<span class="pl-pds">"</span></span>,
+     <span class="pl-s"><span class="pl-pds">"</span>workingday<span class="pl-pds">"</span></span>,
+     <span class="pl-s"><span class="pl-pds">"</span>weathersit<span class="pl-pds">"</span></span>,
+     <span class="pl-s"><span class="pl-pds">"</span>temp<span class="pl-pds">"</span></span>,
+     <span class="pl-s"><span class="pl-pds">"</span>atemp<span class="pl-pds">"</span></span>,
+     <span class="pl-s"><span class="pl-pds">"</span>hum<span class="pl-pds">"</span></span>,
+     <span class="pl-s"><span class="pl-pds">"</span>windspeed<span class="pl-pds">"</span></span>
+   ],
+   <span class="pl-ent">"index"</span>: [<span class="pl-c1">0</span>],
+   <span class="pl-ent">"data"</span>: [[<span class="pl-c1">1</span>,<span class="pl-c1">1</span>,<span class="pl-c1">2022</span>,<span class="pl-c1">2</span>,<span class="pl-c1">0</span>,<span class="pl-c1">1</span>,<span class="pl-c1">1</span>,<span class="pl-c1">2</span>,<span class="pl-c1">0.3</span>,<span class="pl-c1">0.3</span>,<span class="pl-c1">0.3</span>,<span class="pl-c1">0.3</span>]]
+ }
+}
+</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="  {
+ &quot;input_data&quot;: {
+   &quot;columns&quot;: [
+     &quot;day&quot;,
+     &quot;mnth&quot;,
+     &quot;year&quot;,
+     &quot;season&quot;,
+     &quot;holiday&quot;,
+     &quot;weekday&quot;,
+     &quot;workingday&quot;,
+     &quot;weathersit&quot;,
+     &quot;temp&quot;,
+     &quot;atemp&quot;,
+     &quot;hum&quot;,
+     &quot;windspeed&quot;
+   ],
+   &quot;index&quot;: [0],
+   &quot;data&quot;: [[1,1,2022,2,0,1,1,2,0.3,0.3,0.3,0.3]]
+ }
+}
+" tabindex="0" role="button" data-dashlane-label="true" data-dashlane-rid="74c2a4d056f14bf0" data-dashlane-classification="other">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+</li>
+<li>
+<p dir="rtl">انقر فوق الزر <strong>الاختبار</strong>.</p>
+</li>
+<li>
+<p dir="rtl">راجع نتائج الاختبار، التي تتضمن عددًا متوقعًا من مرات الإيجار استنادً إلى ميزات الإدخال - مثل:</p>
+</li>
+<div class="highlight highlight-source-json notranslate position-relative overflow-auto" dir="auto"><pre>[
+  <span class="pl-c1">352.3564674945718</span>
+]</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="[
+  352.3564674945718
+]" tabindex="0" role="button" data-dashlane-label="true" data-dashlane-rid="ab71e42b27a3b507" data-dashlane-classification="other">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="rtl">أخذ جزء الاختبار بيانات الإدخال واستخدم النموذج الذي دربته لإرجاع العدد المتوقع من الإيجارات.</p>
+</li>
+</ol>
+<p dir="rtl">دعونا نستعرض ما فعلته. لقد استخدمت مجموعة بيانات من بيانات تأجير الدراجات التاريخية لتدريب نموذج. يتوقع النموذج عدد مرات تأجير الدراجات المتوقع في يوم معين، استناداً إلى <em>الميزات</em>الموسمية والأرصاد الجوية.</p>
+<div class="markdown-heading" dir="rtl"><h2 tabindex="-1" class="heading-element" dir="rtl">التنظيف</h2><a id="user-content-التنظيف" class="anchor" aria-label="Permalink: التنظيف" href="#التنظيف"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="rtl">تتم استضافة خدمة الويب التي قمت بإنشائها في <em>Azure Container Instance</em>. إذا كنت لا تنوي إجراء المزيد من التجارب عليها، فإنه يجب عليك حذف نقطة النهاية لتجنب تراكم استخدام Azure غير الضروري.</p>
+<ol dir="rtl">
+<li>
+<p dir="rtl">في <a href="https://ml.azure.com?azure-portal=true" rel="nofollow">آلة ستوديو Azure Machine Learning</a>، في علامة التبويب <strong>نقاط النهاية</strong>، حدد نقطة النهاية <strong>predict-rentals</strong>. ثم حدد <strong>Delete</strong>، وقم بالتأكيد على رغبتك في حذف نقطة النهاية.</p>
+<p dir="rtl">يضمن حذف الحساب عدم تحصيل رسوم من اشتراكك مقابل موارد الحساب. ومع ذلك، سيتم تحصيل مبلغ صغير لتخزين البيانات طالما أن مساحة عمل التعلم الآلي من Azure موجودة في اشتراكك. إذا انتهيت من استكشاف التعلم الآلي من Azure، فإنه يمكنك حذف مساحة عمل التعلم الآلي من Azure والموارد المقترنة بها.</p>
+</li>
+</ol>
+<p dir="rtl">لحذف مساحة العمل لديك:</p>
+<ol dir="rtl">
+<li>في <a href="https://portal.azure.com?azure-portal=true" rel="nofollow">مدخل Azure</a>، ومن صفحة <strong>Resource groups</strong>، افتح مجموعة الموارد التي حددتها عند إنشاء مساحة عمل Azure Machine Learning.</li>
+<li>انقر فوق <strong>حذف مجموعة الموارد</strong>، واكتب اسم مجموعة الموارد لتأكيد أنك ترغب في حذفها، ثم حدد <strong>Delete</strong>.</li>
+</ol>
+</article></div>
