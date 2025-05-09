@@ -1,4 +1,4 @@
-<div class="Box-sc-g0xbh4-0 eoaCFS js-snippet-clipboard-copy-unpositioned undefined" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><markdown-accessiblity-table data-catalyst=""><table>
+<div class="Box-sc-g0xbh4-0 eoaCFS js-snippet-clipboard-copy-unpositioned undefined" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><div dir="rtl"><markdown-accessiblity-table data-catalyst=""><table>
   <thead>
   <tr>
   <th>lab</th>
@@ -22,11 +22,10 @@
   </tr>
   </tbody>
 </table></markdown-accessiblity-table>
-
-<div class="markdown-heading" dir="rtl"><h1 tabindex="-1" class="heading-element" dir="rtl">استكشاف التعلُّم الآلي التلقائي ي Azure Machine Learning</h1><a id="user-content-استكشاف-التعلُّم-الآلي-التلقائي-ي-azure-machine-learning" class="anchor" aria-label="Permalink: استكشاف التعلُّم الآلي التلقائي ي Azure Machine Learning" href="#استكشاف-التعلُّم-الآلي-التلقائي-ي-azure-machine-learning"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div dir="rtl"><div class="markdown-heading" dir="rtl"><h1 tabindex="-1" dir="rtl" class="heading-element">استكشاف التعلُّم الآلي التلقائي ي Azure Machine Learning</h1><a id="user-content-استكشاف-التعلُّم-الآلي-التلقائي-ي-azure-machine-learning" class="anchor" aria-label="Permalink: استكشاف التعلُّم الآلي التلقائي ي Azure Machine Learning" href="#استكشاف-التعلُّم-الآلي-التلقائي-ي-azure-machine-learning"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div><a id="user-content-استكشاف-التعلُّم-الآلي-التلقائي-ي-azure-machine-learning" aria-label="Permalink: استكشاف التعلُّم الآلي التلقائي ي Azure Machine Learning" href="#استكشاف-التعلُّم-الآلي-التلقائي-ي-azure-machine-learning"></a></div>
 <p dir="rtl">في هذا التمرين، ستستخدم ميزة التعلّم الآلي التلقائي في التعلّم الآلي في Azure لتدريب نموذج التعلم الآلي وتقييمه. ثم ستقوم بنشر النموذج المُدرّب واختباره.</p>
 <p dir="rtl">يجب أن يستغرق هذا التمرين حوالي <strong>35</strong> دقيقة لإكماله.</p>
-<div class="markdown-heading" dir="rtl"><h2 tabindex="-1" class="heading-element" dir="rtl">إنشاء مساحة عمل "التعلم الآلي من Azure"</h2><a id="user-content-إنشاء-مساحة-عمل-التعلم-الآلي-من-azure" class="anchor" aria-label="Permalink: إنشاء مساحة عمل &quot;التعلم الآلي من Azure&quot;" href="#إنشاء-مساحة-عمل-التعلم-الآلي-من-azure"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div dir="rtl"><div class="markdown-heading" dir="rtl"><h2 tabindex="-1" dir="rtl" class="heading-element">إنشاء مساحة عمل "التعلم الآلي من Azure"</h2><a id="user-content-إنشاء-مساحة-عمل-التعلم-الآلي-من-azure" class="anchor" aria-label="Permalink: إنشاء مساحة عمل &quot;التعلم الآلي من Azure&quot;" href="#إنشاء-مساحة-عمل-التعلم-الآلي-من-azure"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div><a id="user-content-إنشاء-مساحة-عمل-التعلم-الآلي-من-azure" aria-label="Permalink: إنشاء مساحة عمل &quot;التعلم الآلي من Azure&quot;" href="#إنشاء-مساحة-عمل-التعلم-الآلي-من-azure"></a></div>
 <p dir="rtl">لاستخدام التعلّم الآلي في Azure، تحتاج إلى توفير مساحة عمل تعلّم آلي في Azure في اشتراك Azure الخاص بك. ثم ستتمكن من استخدام استوديو التعلّم الآلي في Azure للعمل مع الموارد في مساحة العمل الخاصة بك.</p>
 <blockquote>
 <p dir="rtl"><strong>تلميح</strong>: إذا كان لديك بالفعل مساحة عمل التعلّم الآلي في Azure، يمكنك استخدام ذلك والتخطي إلى المهمة التالية.</p>
@@ -52,7 +51,7 @@
 <p dir="rtl">حدد <strong>Review + create</strong>، ثم حدد <strong>Create</strong>. انتظر حتى يتم إنشاء مساحة العمل الخاصة بك (قد يستغرق الأمر بضع دقائق)، ثم انتقل إلى المورد الموزع.</p>
 </li>
 </ol>
-<div class="markdown-heading" dir="rtl"><h4 tabindex="-1" class="heading-element" dir="rtl">تشغيل الاستوديو</h4><a id="user-content-تشغيل-الاستوديو" class="anchor" aria-label="Permalink: تشغيل الاستوديو" href="#تشغيل-الاستوديو"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div dir="rtl"><div class="markdown-heading" dir="rtl"><h4 tabindex="-1" dir="rtl" class="heading-element">تشغيل الاستوديو</h4><a id="user-content-تشغيل-الاستوديو" class="anchor" aria-label="Permalink: تشغيل الاستوديو" href="#تشغيل-الاستوديو"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div><a id="user-content-تشغيل-الاستوديو" aria-label="Permalink: تشغيل الاستوديو" href="#تشغيل-الاستوديو"></a></div>
 <ol dir="rtl">
 <li>
 <p dir="rtl">في مورد مساحة عمل تعلم الآلة في Azure، حدد <strong>تشغيل الاستوديو</strong> (أو افتح علامة تبويب جديدة للمتصفح وانتقل إلى <a href="https://ml.azure.com?azure-portal=true" rel="nofollow">https://ml.azure.com</a>، وسجّل الدخول إلى استوديو Azure Machine Learning باستخدام حساب Microsoft الخاص بك). أغلق أي رسائل يتم عرضها.</p>
@@ -61,7 +60,7 @@
 <p dir="rtl">في Azure Machine Learning studio، يجب أن تشاهد مساحة العمل التي تم إنشاؤها حديثًا. إذا لم يكن الأمر كذلك، فحدد <strong>جميع مساحات العمل</strong> في القائمة اليسرى ثم حدد مساحة العمل التي أنشأتها للتو.</p>
 </li>
 </ol>
-<div class="markdown-heading" dir="rtl"><h2 tabindex="-1" class="heading-element" dir="rtl">استخدم التعلّم الآلي التلقائي لتدريب نماذج</h2><a id="user-content-استخدم-التعلّم-الآلي-التلقائي-لتدريب-نماذج" class="anchor" aria-label="Permalink: استخدم التعلّم الآلي التلقائي لتدريب نماذج" href="#استخدم-التعلّم-الآلي-التلقائي-لتدريب-نماذج"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div dir="rtl"><div class="markdown-heading" dir="rtl"><h2 tabindex="-1" dir="rtl" class="heading-element">استخدم التعلّم الآلي التلقائي لتدريب نماذج</h2><a id="user-content-استخدم-التعلّم-الآلي-التلقائي-لتدريب-نماذج" class="anchor" aria-label="Permalink: استخدم التعلّم الآلي التلقائي لتدريب نماذج" href="#استخدم-التعلّم-الآلي-التلقائي-لتدريب-نماذج"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div><a id="user-content-استخدم-التعلّم-الآلي-التلقائي-لتدريب-نماذج" aria-label="Permalink: استخدم التعلّم الآلي التلقائي لتدريب نماذج" href="#استخدم-التعلّم-الآلي-التلقائي-لتدريب-نماذج"></a></div>
 <p dir="rtl">يتيح لك التعلّم الآلي التلقائي تجربة خوارزميات ومعلمات متعددة لتدريب نماذج متعددة، وتحديد أفضل نموذج لبياناتك. في هذا التمرين، ستستخدم مجموعة بيانات من التفاصيل القديمة لتأجير الدراجات لتدريب نموذج يتنبأ بعدد مرات تأجير الدراجات التي ينبغي توقعها في يوم معين، بناءً على الميزات الموسمية والأرصاد الجوية.</p>
 <blockquote>
 <p dir="rtl"><strong>الاقتباس</strong>: <em>البيانات المستخدمة في هذا التمرين مُشتقة من <a href="https://www.capitalbikeshare.com/system-data" rel="nofollow">Capital Bikeshare</a> وتستخدم وفقًا لـ<a href="https://www.capitalbikeshare.com/data-license-agreement" rel="nofollow">اتفاقية ترخيص</a>البيانات المنشورة</em>.</p>
@@ -164,12 +163,12 @@
 <p dir="rtl">انتظر حتى تنتهي المهمة. قد يستغرق بعض الوقت - الآن قد يكون الوقت المناسب لفترة استراحة لتناول القهوة!</p>
 </li>
 </ol>
-<div class="markdown-heading" dir="rtl"><h2 tabindex="-1" class="heading-element" dir="rtl">مراجعة أفضل نموذج</h2><a id="user-content-مراجعة-أفضل-نموذج" class="anchor" aria-label="Permalink: مراجعة أفضل نموذج" href="#مراجعة-أفضل-نموذج"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div dir="rtl"><div class="markdown-heading" dir="rtl"><h2 tabindex="-1" dir="rtl" class="heading-element">مراجعة أفضل نموذج</h2><a id="user-content-مراجعة-أفضل-نموذج" class="anchor" aria-label="Permalink: مراجعة أفضل نموذج" href="#مراجعة-أفضل-نموذج"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div><a id="user-content-مراجعة-أفضل-نموذج" aria-label="Permalink: مراجعة أفضل نموذج" href="#مراجعة-أفضل-نموذج"></a></div>
 <p dir="rtl">عند اكتمال مهمة التعلّم الآلي التلقائي، يمكنك مراجعة أفضل نموذج تم تدريبه.</p>
 <ol dir="rtl">
 <li>
 <p dir="rtl">في علامة التبويب <strong>Overview</strong> شغّل التعلم الآلي التلقائي، لاحظ أفضل ملخص نموذج.
-<a target="_blank" rel="noopener noreferrer" href="https://github.com/MicrosoftLearning/mslearn-ai-fundamentals.ar-sa/blob/main/Instructions/Labs/media/use-automated-machine-learning/complete-run.png"><img src="https://github.com/MicrosoftLearning/mslearn-ai-fundamentals.ar-sa/blob/main/Instructions/Labs/media/use-automated-machine-learning/complete-run.png" alt="لقطة شاشة لأفضل ملخص نموذج لوظيفة التعلم الآلي التلقائية مع مربع حول algorithm name." style="max-width: 100%;"></a></p>
+<a href="https://github.com/MicrosoftLearning/mslearn-ai-fundamentals.ar-sa/blob/main/Instructions/Labs/media/use-automated-machine-learning/complete-run.png"><img src="https://github.com/MicrosoftLearning/mslearn-ai-fundamentals.ar-sa/raw/main/Instructions/Labs/media/use-automated-machine-learning/complete-run.png" alt="لقطة شاشة لأفضل ملخص نموذج لوظيفة التعلم الآلي التلقائية مع مربع حول algorithm name." style="max-width: 100%;"></a></p>
 </li>
 <li>
 <p dir="rtl">حدد النص الموجود أسفل <strong>اسم الخوارزمية</strong> لأفضل نموذج لعرض تفاصيله.</p>
@@ -179,7 +178,7 @@
 <p dir="rtl">راجع المخططات البيانية التي توضح أداء النموذج. يظهر مخطط<strong>القيم المتبقية</strong> <em>القيم المتبقية</em> (الاختلافات بين القيم المتوقعة والقيم الفعلية) كمدرج تكراري. يقارن مخطط <strong>predicted_true</strong> القيم المتوقعة بالقيم الحقيقية.</p>
 </li>
 </ol>
-<div class="markdown-heading" dir="rtl"><h2 tabindex="-1" class="heading-element" dir="rtl">نشر النموذج واختباره</h2><a id="user-content-نشر-النموذج-واختباره" class="anchor" aria-label="Permalink: نشر النموذج واختباره" href="#نشر-النموذج-واختباره"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div dir="rtl"><div class="markdown-heading" dir="rtl"><h2 tabindex="-1" dir="rtl" class="heading-element">نشر النموذج واختباره</h2><a id="user-content-نشر-النموذج-واختباره" class="anchor" aria-label="Permalink: نشر النموذج واختباره" href="#نشر-النموذج-واختباره"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div><a id="user-content-نشر-النموذج-واختباره" aria-label="Permalink: نشر النموذج واختباره" href="#نشر-النموذج-واختباره"></a></div>
 <ol dir="rtl">
 <li>
 <p dir="rtl">على علامة تبويب <strong>النموذج</strong> لأفضل نموذج مدرب من قبل مهمة التعلم الآلي التلقائية خاصتك، حدد <strong>توزيع</strong> واستخدم خيار <strong>نقطة النهاية في الوقت الحقيقي</strong> لتوزيع النموذج مع الإعدادات التالية:</p>
@@ -203,7 +202,7 @@
 <p dir="rtl">انتظر حتى تتغير <strong>حالة النشر</strong> إلى <em>نجح</em>. قد يستغرق هذا ما يصل إلى 5-10 دقائق.</p>
 </li>
 </ol>
-<div class="markdown-heading" dir="rtl"><h2 tabindex="-1" class="heading-element" dir="rtl">اختبار الخدمة المنشورة</h2><a id="user-content-اختبار-الخدمة-المنشورة" class="anchor" aria-label="Permalink: اختبار الخدمة المنشورة" href="#اختبار-الخدمة-المنشورة"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div dir="rtl"><div class="markdown-heading" dir="rtl"><h2 tabindex="-1" dir="rtl" class="heading-element">اختبار الخدمة المنشورة</h2><a id="user-content-اختبار-الخدمة-المنشورة" class="anchor" aria-label="Permalink: اختبار الخدمة المنشورة" href="#اختبار-الخدمة-المنشورة"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div><a id="user-content-اختبار-الخدمة-المنشورة" aria-label="Permalink: اختبار الخدمة المنشورة" href="#اختبار-الخدمة-المنشورة"></a></div>
 <p dir="rtl">يمكنك الآن اختبار الخدمة التي تم توزيعها.</p>
 <ol dir="rtl">
 <li>
@@ -215,82 +214,60 @@
 <li>
 <p dir="rtl">في جزء <strong>بيانات الإدخال لاختبار نقطة النهاية</strong>، استبدل قالب JSON ببيانات الإدخال التالية:</p>
 </li>
-<div class="highlight highlight-source-json notranslate position-relative overflow-auto" dir="auto"><pre>  {
- <span class="pl-ent">"input_data"</span>: {
-   <span class="pl-ent">"columns"</span>: [
-     <span class="pl-s"><span class="pl-pds">"</span>day<span class="pl-pds">"</span></span>,
-     <span class="pl-s"><span class="pl-pds">"</span>mnth<span class="pl-pds">"</span></span>,
-     <span class="pl-s"><span class="pl-pds">"</span>year<span class="pl-pds">"</span></span>,
-     <span class="pl-s"><span class="pl-pds">"</span>season<span class="pl-pds">"</span></span>,
-     <span class="pl-s"><span class="pl-pds">"</span>holiday<span class="pl-pds">"</span></span>,
-     <span class="pl-s"><span class="pl-pds">"</span>weekday<span class="pl-pds">"</span></span>,
-     <span class="pl-s"><span class="pl-pds">"</span>workingday<span class="pl-pds">"</span></span>,
-     <span class="pl-s"><span class="pl-pds">"</span>weathersit<span class="pl-pds">"</span></span>,
-     <span class="pl-s"><span class="pl-pds">"</span>temp<span class="pl-pds">"</span></span>,
-     <span class="pl-s"><span class="pl-pds">"</span>atemp<span class="pl-pds">"</span></span>,
-     <span class="pl-s"><span class="pl-pds">"</span>hum<span class="pl-pds">"</span></span>,
-     <span class="pl-s"><span class="pl-pds">"</span>windspeed<span class="pl-pds">"</span></span>
+<div dir="rtl"><pre>  {
+ <span>"input_data"</span>: {
+   <span>"columns"</span>: [
+     <span><span>"</span>day<span>"</span></span>,
+     <span><span>"</span>mnth<span>"</span></span>,
+     <span><span>"</span>year<span>"</span></span>,
+     <span><span>"</span>season<span>"</span></span>,
+     <span><span>"</span>holiday<span>"</span></span>,
+     <span><span>"</span>weekday<span>"</span></span>,
+     <span><span>"</span>workingday<span>"</span></span>,
+     <span><span>"</span>weathersit<span>"</span></span>,
+     <span><span>"</span>temp<span>"</span></span>,
+     <span><span>"</span>atemp<span>"</span></span>,
+     <span><span>"</span>hum<span>"</span></span>,
+     <span><span>"</span>windspeed<span>"</span></span>
    ],
-   <span class="pl-ent">"index"</span>: [<span class="pl-c1">0</span>],
-   <span class="pl-ent">"data"</span>: [[<span class="pl-c1">1</span>,<span class="pl-c1">1</span>,<span class="pl-c1">2022</span>,<span class="pl-c1">2</span>,<span class="pl-c1">0</span>,<span class="pl-c1">1</span>,<span class="pl-c1">1</span>,<span class="pl-c1">2</span>,<span class="pl-c1">0.3</span>,<span class="pl-c1">0.3</span>,<span class="pl-c1">0.3</span>,<span class="pl-c1">0.3</span>]]
+   <span>"index"</span>: [<span>0</span>],
+   <span>"data"</span>: [[<span>1</span>,<span>1</span>,<span>2022</span>,<span>2</span>,<span>0</span>,<span>1</span>,<span>1</span>,<span>2</span>,<span>0.3</span>,<span>0.3</span>,<span>0.3</span>,<span>0.3</span>]]
  }
 }
-</pre><div class="zeroclipboard-container">
-    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="  {
- &quot;input_data&quot;: {
-   &quot;columns&quot;: [
-     &quot;day&quot;,
-     &quot;mnth&quot;,
-     &quot;year&quot;,
-     &quot;season&quot;,
-     &quot;holiday&quot;,
-     &quot;weekday&quot;,
-     &quot;workingday&quot;,
-     &quot;weathersit&quot;,
-     &quot;temp&quot;,
-     &quot;atemp&quot;,
-     &quot;hum&quot;,
-     &quot;windspeed&quot;
-   ],
-   &quot;index&quot;: [0],
-   &quot;data&quot;: [[1,1,2022,2,0,1,1,2,0.3,0.3,0.3,0.3]]
- }
-}
-" tabindex="0" role="button" data-dashlane-label="true" data-dashlane-rid="74c2a4d056f14bf0" data-dashlane-classification="other">
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
-    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
-</svg>
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
-    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
-</svg>
-    </clipboard-copy>
+</pre><div dir="rtl">
+    
+      
+    
+
+      
+    
+
+    
   </div></div>
-</li>
+
 <li>
 <p dir="rtl">انقر فوق الزر <strong>الاختبار</strong>.</p>
 </li>
 <li>
 <p dir="rtl">راجع نتائج الاختبار، التي تتضمن عددًا متوقعًا من مرات الإيجار استنادً إلى ميزات الإدخال - مثل:</p>
 </li>
-<div class="highlight highlight-source-json notranslate position-relative overflow-auto" dir="auto"><pre>[
-  <span class="pl-c1">352.3564674945718</span>
-]</pre><div class="zeroclipboard-container">
-    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="[
-  352.3564674945718
-]" tabindex="0" role="button" data-dashlane-label="true" data-dashlane-rid="ab71e42b27a3b507" data-dashlane-classification="other">
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
-    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
-</svg>
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
-    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
-</svg>
-    </clipboard-copy>
+<div dir="rtl"><pre>[
+  <span>352.3564674945718</span>
+]</pre><div dir="rtl">
+    
+      
+    
+
+      
+    
+
+    
   </div></div>
 <p dir="rtl">أخذ جزء الاختبار بيانات الإدخال واستخدم النموذج الذي دربته لإرجاع العدد المتوقع من الإيجارات.</p>
-</li>
+
 </ol>
 <p dir="rtl">دعونا نستعرض ما فعلته. لقد استخدمت مجموعة بيانات من بيانات تأجير الدراجات التاريخية لتدريب نموذج. يتوقع النموذج عدد مرات تأجير الدراجات المتوقع في يوم معين، استناداً إلى <em>الميزات</em>الموسمية والأرصاد الجوية.</p>
-<div class="markdown-heading" dir="rtl"><h2 tabindex="-1" class="heading-element" dir="rtl">التنظيف</h2><a id="user-content-التنظيف" class="anchor" aria-label="Permalink: التنظيف" href="#التنظيف"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div dir="rtl"><div class="markdown-heading" dir="rtl"><h2 tabindex="-1" dir="rtl" class="heading-element">التنظيف</h2><a id="user-content-التنظيف" class="anchor" aria-label="Permalink: التنظيف" href="#التنظيف"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div><a id="user-content-التنظيف" aria-label="Permalink: التنظيف" href="#التنظيف"></a></div>
 <p dir="rtl">تتم استضافة خدمة الويب التي قمت بإنشائها في <em>Azure Container Instance</em>. إذا كنت لا تنوي إجراء المزيد من التجارب عليها، فإنه يجب عليك حذف نقطة النهاية لتجنب تراكم استخدام Azure غير الضروري.</p>
 <ol dir="rtl">
 <li>
@@ -303,4 +280,5 @@
 <li>في <a href="https://portal.azure.com?azure-portal=true" rel="nofollow">مدخل Azure</a>، ومن صفحة <strong>Resource groups</strong>، افتح مجموعة الموارد التي حددتها عند إنشاء مساحة عمل Azure Machine Learning.</li>
 <li>انقر فوق <strong>حذف مجموعة الموارد</strong>، واكتب اسم مجموعة الموارد لتأكيد أنك ترغب في حذفها، ثم حدد <strong>Delete</strong>.</li>
 </ol>
+</div>
 </article></div>
