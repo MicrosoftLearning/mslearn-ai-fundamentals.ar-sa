@@ -1,4 +1,4 @@
-<div class="Box-sc-g0xbh4-0 eoaCFS js-snippet-clipboard-copy-unpositioned undefined" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><markdown-accessiblity-table data-catalyst=""><table>
+<div class="Box-sc-g0xbh4-0 eoaCFS js-snippet-clipboard-copy-unpositioned undefined" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><div dir="rtl"><markdown-accessiblity-table data-catalyst=""><table>
   <thead>
   <tr>
   <th>lab</th>
@@ -331,7 +331,7 @@
 </li>
 </ol>
 <p dir="rtl">في حقل <strong>محرر استعلام JSON</strong>، انسخ والصق:</p>
-<div class="highlight highlight-source-json notranslate position-relative overflow-auto" dir="rtl"><pre>{
+<div class="highlight highlight-source-json notranslate position-relative overflow-auto" dir="auto"><pre>{
     <span class="pl-ent">"search"</span>: <span class="pl-s"><span class="pl-pds">"</span>*<span class="pl-pds">"</span></span>,
     <span class="pl-ent">"count"</span>: <span class="pl-c1">true</span>
 }</pre><div class="zeroclipboard-container">
@@ -355,7 +355,7 @@
 <p dir="rtl">الآن دعونا نباشر بتصفية حسب الموقع. في حقل <strong>محرر استعلام JSON</strong>، انسخ والصق:</p>
 </li>
 </ol>
-<div class="highlight highlight-source-json notranslate position-relative overflow-auto" dir="rtl"><pre>{
+<div class="highlight highlight-source-json notranslate position-relative overflow-auto" dir="auto"><pre>{
     <span class="pl-ent">"search"</span>: <span class="pl-s"><span class="pl-pds">"</span>locations:'Chicago'<span class="pl-pds">"</span></span>,
     <span class="pl-ent">"count"</span>: <span class="pl-c1">true</span>
 }</pre><div class="zeroclipboard-container">
@@ -379,7 +379,7 @@
 <p dir="rtl">الآن دعونا نصفي حسب التوجه. في حقل <strong>محرر استعلام JSON</strong>، انسخ والصق:</p>
 </li>
 </ol>
-<div class="highlight highlight-source-json notranslate position-relative overflow-auto" dir="rtl"><pre>{
+<div class="highlight highlight-source-json notranslate position-relative overflow-auto" dir="auto"><pre>{
     <span class="pl-ent">"search"</span>: <span class="pl-s"><span class="pl-pds">"</span>sentiment:'negative'<span class="pl-pds">"</span></span>,
     <span class="pl-ent">"count"</span>: <span class="pl-c1">true</span>
 }</pre><div class="zeroclipboard-container">
